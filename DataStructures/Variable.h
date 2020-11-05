@@ -9,6 +9,6 @@ struct node
 struct Dnode
 {
 	int v;
-	Dnode* next = NULL;
-	Dnode* prev = NULL;
+	Dnode* next = nullptr;
+	Dnode* prev = nullptr;
 };

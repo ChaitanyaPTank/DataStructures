@@ -8,8 +8,8 @@ using namespace std;
 class DoublyLinkedList
 {
 private:
-	Dnode* head = NULL;
-	Dnode* tail = NULL;
+	Dnode* head = nullptr;
+	Dnode* tail = nullptr;
 
 public:
 	Dnode* createNode(int value);

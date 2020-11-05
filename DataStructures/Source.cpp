@@ -7,16 +7,15 @@ using namespace std;
 int main() {
 	DoublyLinkedList list1;
 
-	/*for (int i = 0; i < 10; ++i)
-	{
-		list1.insertNode(list1.createNode(i * 10));
-	}*/
-
 	list1.insertNode(list1.createNode(10));
+	list1.insertNode(list1.createNode(20));
+	list1.insertNode(list1.createNode(30));
 
 	cout << "Printing List" << endl;
 
 	list1.printList();
+
+	//reverse printing test
 
 	cout << "Reverse Printing" << endl;
 

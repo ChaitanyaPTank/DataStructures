@@ -2,11 +2,11 @@
 
 Dnode* DoublyLinkedList::createNode(int value)
 {
-	Dnode* temp = (Dnode*)malloc(sizeof(Dnode));
-	if (temp != NULL)
+	Dnode* temp = new Dnode;
+	if (temp != nullptr)
 	{
-		temp->next = NULL;
-		temp->prev = NULL;
+		temp->next = nullptr;
+		temp->prev = nullptr;
 		temp->v = value;
 	}
 	return temp;
@@ -14,7 +14,7 @@ Dnode* DoublyLinkedList::createNode(int value)
 
 void DoublyLinkedList::insertNode(Dnode* node_addr)
 {
-	if (head == NULL)
+	if (head == nullptr)
 	{
 		head = node_addr;
 		tail = node_addr;
@@ -22,32 +22,22 @@ void DoublyLinkedList::insertNode(Dnode* node_addr)
 	}
 
 	Dnode* temp = head;
-	while (temp->next != NULL)
+	while (temp->next != nullptr)
 	{
 		temp = temp->next;
 	}
 	temp->next = node_addr;
-	if (head->next != NULL)
+	if (head->next != nullptr)
 	{
 		node_addr->prev = temp;
 		tail = node_addr;
-	}
-
-	if (head->next == NULL)
-	{
-		if (head->prev != NULL)
-		{
-			cout << "Printing prev to head" << endl;
-			cout << head->prev->v << endl;
-		}
-		else cout << "Prev is NULL" << endl;
 	}
 }
 
 void DoublyLinkedList::printList()
 {
 
-	if (head == NULL)
+	if (head == nullptr)
 	{
 		cout << "List is empty" << endl;
 		return;
@@ -55,7 +45,7 @@ void DoublyLinkedList::printList()
 
 	Dnode* temp = head;
 
-	while (temp != NULL)
+	while (temp != nullptr)
 	{
 		cout << "Eelement : " << temp->v << endl;
 		temp = temp->next;
@@ -66,7 +56,7 @@ void DoublyLinkedList::printList()
 
 void DoublyLinkedList::reverseList()
 {
-	if (tail == NULL)
+	if (tail == nullptr)
 	{
 		cout << "List is empty" << endl;
 		return;
@@ -74,7 +64,7 @@ void DoublyLinkedList::reverseList()
 
 	Dnode* temp = tail;
 
-	while (temp != NULL)
+	while (temp != nullptr)
 	{
 		cout << "Element : " << temp->v << endl;
 		temp = temp->prev;

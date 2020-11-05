@@ -3,7 +3,7 @@
 
 class SinglyLinkedList {
 private:
-	node* head = NULL;
+	node* head = nullptr;
 public:
 	node* createNode(int value);
 	void insertNode(node* address);

@@ -5,7 +5,7 @@ using namespace std;
 
 class SinglyLinkedList {
 private:
-	node* head = NULL;
+	node* head = nullptr;
 public:
 	node* createNode(int value);
 	void insertNode(node* address);
@@ -17,10 +17,10 @@ public:
 //This will create node in and put value in it
 
 node* SinglyLinkedList::createNode(int value) {
-	node* temp = (node*)malloc(sizeof(node));
-	if (temp != NULL) {
+	node* temp = new node;
+	if (temp != nullptr) {
 		temp->v = value;
-		temp->next = NULL;
+		temp->next = nullptr;
 	}
 	return temp;
 }
@@ -28,12 +28,12 @@ node* SinglyLinkedList::createNode(int value) {
 //Address of newly created node will be passed here and node will be attached at the end of last element of existing list
 
 void SinglyLinkedList::insertNode(node* address) {
-	if (head == NULL) {
+	if (head == nullptr) {
 		head = address;
 		return;
 	}
 	node* temp = head;
-	while (temp->next != NULL)
+	while (temp->next != nullptr)
 	{
 		temp = temp->next;
 	}
@@ -51,7 +51,7 @@ int SinglyLinkedList::testList() {
 	node* temp = head;
 
 	int i = 0;
-	while (temp != NULL)
+	while (temp != nullptr)
 	{
 		if (temp->v != i) {
 			return 0;
@@ -81,7 +81,7 @@ void SinglyLinkedList::removeNode(int value)
 // Prnting List
 void SinglyLinkedList::printList() {
 	node* temp = head;
-	while (temp != NULL)
+	while (temp != nullptr)
 	{
 		cout << temp->v << endl;
 		temp = temp->next;
