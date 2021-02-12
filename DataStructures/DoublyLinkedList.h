@@ -1,20 +1,36 @@
 #pragma once
 
 #include <iostream>
-#include "Variable.h"
 
 using namespace std;
 
-class DoublyLinkedList
+// This class is just simpal DllNode class and is able to make 
+class DLLNode
 {
-private:
-	Dnode* head = nullptr;
-	Dnode* tail = nullptr;
+protected:
+
+	int v;
+	DLLNode* next;
+	DLLNode* prev;
 
 public:
-	Dnode* createNode(int value);
-	void insertNode(Dnode* addr);
+
+	DLLNode* createNode(int value);
+	void insertNode(DLLNode* addr);
+};
+
+class DoublyLinkedList : public DLLNode
+{
+private:
+
+	DLLNode* head = nullptr;
+	DLLNode* tail = nullptr;
+
+public:
+
+	DLLNode* createNode(int value);
+	void insertNode(DLLNode* addr);
 	void printList();
 	void reverseList();
-
+	void removeNode(int value);
 };
