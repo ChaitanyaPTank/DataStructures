@@ -1,13 +1,26 @@
 #pragma once
-#include "Variable.h"
+#include<iostream>
 
-class SinglyLinkedList {
-private:
-	node* head = nullptr;
-public:
-	node* createNode(int value);
-	void insertNode(node* address);
-	int testList();
-	void removeNode(int value);
-	void printList();
+using namespace std;
+
+struct node
+{
+	int value;
+	node* next;
 };
+
+class SinglyLinkedList
+{
+private:
+	node* head;
+	node* tail;
+
+public:
+	SinglyLinkedList();
+	~SinglyLinkedList();
+	int insertNode(node* element);
+	node* createNode(int value);
+	void print();
+	void append(int val);
+};
+
