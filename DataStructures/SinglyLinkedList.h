@@ -22,5 +22,6 @@ public:
 	node* createNode(int value);
 	void print();
 	void append(int val);
+	void pop(int value);
 };
 

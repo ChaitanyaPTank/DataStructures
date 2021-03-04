@@ -14,4 +14,9 @@ int main(void) {
 
 	newElement.print();
 
+	newElement.pop(30);
+
+	cout << "after popping element..." << endl;
+	newElement.print();
+
 }
