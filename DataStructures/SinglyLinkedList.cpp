@@ -45,12 +45,10 @@ void SinglyLinkedList::print() {
 		cout << temp->value << endl;
 		temp = temp->next;
 	}
-<<<<<<< HEAD
 }
 
 void SinglyLinkedList::append(int val) {
 	insertNode(createNode(val));
-=======
 }
 
 void SinglyLinkedList::append(int val) {
@@ -76,5 +74,4 @@ void SinglyLinkedList::pop(int val) {
 
 	(*follower) = (*follower)->next;
 
->>>>>>> cee239671ed1a8121a990c09d449c9dec656284f
 }

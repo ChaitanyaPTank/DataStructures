@@ -22,9 +22,6 @@ public:
 	node* createNode(int value);
 	void print();
 	void append(int val);
-<<<<<<< HEAD
-=======
 	void pop(int value);
->>>>>>> cee239671ed1a8121a990c09d449c9dec656284f
 };
 
