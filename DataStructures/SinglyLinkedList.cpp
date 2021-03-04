@@ -45,8 +45,36 @@ void SinglyLinkedList::print() {
 		cout << temp->value << endl;
 		temp = temp->next;
 	}
+<<<<<<< HEAD
 }
 
 void SinglyLinkedList::append(int val) {
 	insertNode(createNode(val));
+=======
+}
+
+void SinglyLinkedList::append(int val) {
+	insertNode(createNode(val));
+}
+
+void SinglyLinkedList::pop(int val) {
+	if (this->head == nullptr) {
+		cout << "Can not pop anything" << endl;
+		return;
+	}
+
+	node* temp = this->head;
+	node** follower;
+	follower = &temp;
+
+	while ((*follower)->value != val)
+	{
+		// assign new address to follower rather than doing this
+		// (*follower) = (*follower)->next;
+		follower = &((*follower)->next);
+	}
+
+	(*follower) = (*follower)->next;
+
+>>>>>>> cee239671ed1a8121a990c09d449c9dec656284f
 }
