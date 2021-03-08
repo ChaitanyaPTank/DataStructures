@@ -110,7 +110,7 @@ void DoublyLinkedList::printList()
 
 	while (temp != nullptr)
 	{
-		cout << "Eelement : " << temp->v << endl;
+		cout << "Element : " << temp->v << endl;
 		temp = temp->next;
 	}
 

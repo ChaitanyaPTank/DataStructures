@@ -51,10 +51,6 @@ void SinglyLinkedList::append(int val) {
 	insertNode(createNode(val));
 }
 
-void SinglyLinkedList::append(int val) {
-	insertNode(createNode(val));
-}
-
 void SinglyLinkedList::pop(int val) {
 	if (this->head == nullptr) {
 		cout << "Can not pop anything" << endl;
