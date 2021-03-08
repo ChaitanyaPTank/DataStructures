@@ -5,32 +5,24 @@
 using namespace std;
 
 // This class is just simpal DllNode class and is able to make 
-class DLLNode
+struct DLLNode
 {
-protected:
-
 	int v;
 	DLLNode* next;
 	DLLNode* prev;
-
-public:
-
-	DLLNode* createNode(int value);
-	void insertNode(DLLNode* addr);
 };
 
-class DoublyLinkedList : public DLLNode
+class DoublyLinkedList
 {
 private:
-
 	DLLNode* head = nullptr;
 	DLLNode* tail = nullptr;
 
 public:
-
 	DLLNode* createNode(int value);
-	void insertNode(DLLNode* addr);
+	void insertNode(DLLNode* address);
 	void printList();
-	void reverseList();
-	void removeNode(int value);
+	void reversePrint();
+	void pop(int value);
+	void append(int value);
 };

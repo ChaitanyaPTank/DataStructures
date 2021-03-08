@@ -1,6 +1,6 @@
 #include "DoublyLinkedList.h"
 
-// This are old C like programming
+// //This are old C like programming
 //This method is to create the node of type Dnode
 //Dnode* DoublyLinkedList::createNode(int value)
 //{
@@ -18,7 +18,7 @@
 //	}
 //}
 
-//This mehtod is to insert node in singly linked list
+// // This mehtod is to insert node in singly linked list
 //void DoublyLinkedList::insertNode(Dnode* node_addr)
 //{
 //	if (head == nullptr)
@@ -41,33 +41,22 @@
 //	}
 //}
 
-DLLNode* DoublyLinkedList::createNode(int value) {
-
-}
-
-DLLNode* DLLNode::createNode(int value)
+DLLNode* DoublyLinkedList::createNode(int value)
 {
 	DLLNode* temp = new DLLNode;
-	if (temp != nullptr)
-	{
-		temp->next = nullptr;
-		temp->prev = nullptr;
-		temp->v = value;
-		return temp;
-	}
-	else
-	{
-		cout << "Could not assign memory for the node || Memory full" << endl;
-	}
+	temp->next = nullptr;
+	temp->prev = nullptr;
+	temp->v = value;
+
+	return temp;
 }
 
-
-void DLLNode::insertNode(DLLNode* node_addr)
+void DoublyLinkedList::insertNode(DLLNode* newNode)
 {
 	if (head == nullptr)
 	{
-		head = node_addr;
-		tail = node_addr;
+		head = newNode;
+		tail = newNode;
 		return;
 	}
 
@@ -76,15 +65,20 @@ void DLLNode::insertNode(DLLNode* node_addr)
 	{
 		temp = temp->next;
 	}
-	temp->next = node_addr;
+	temp->next = newNode;
 	if (head->next != nullptr)
 	{
-		node_addr->prev = temp;
-		tail = node_addr;
+		newNode->prev = temp;
+		tail = newNode;
 	}
 }
 
-void DoublyLinkedList::removeNode(int value)
+void DoublyLinkedList::append(int value)
+{
+	insertNode(createNode(value));
+}
+
+void DoublyLinkedList::pop(int value)
 {
 	if (head == nullptr)
 	{
@@ -125,7 +119,7 @@ void DoublyLinkedList::printList()
 
 
 //This method is to print list from the end
-void DoublyLinkedList::reverseList()
+void DoublyLinkedList::reversePrint()
 {
 	if (tail == nullptr)
 	{
