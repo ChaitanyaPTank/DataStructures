@@ -1,9 +1,12 @@
 #pragma once
 
 #include<iostream>
-#include"SinglyLinkedList.h"
+#include "SinglyLinkedList.h"
+#include "DoublyLinkedList.h"
 
-int main(void) {
+/*
+int main(void)
+{
 	SinglyLinkedList newElement;
 
 	newElement.append(10);
@@ -19,4 +22,21 @@ int main(void) {
 	cout << "after popping element..." << endl;
 	newElement.print();
 
+}
+*/
+
+int main(void)
+{
+	DoublyLinkedList testObj;
+	testObj.append(10);
+	testObj.append(20);
+	testObj.append(30);
+	//testObj.append(40);
+	//testObj.append(50);
+
+	testObj.print();
+
+	testObj.pop(10);
+
+	testObj.print();
 }

@@ -1,46 +1,5 @@
 #include "DoublyLinkedList.h"
 
-// //This are old C like programming
-//This method is to create the node of type Dnode
-//Dnode* DoublyLinkedList::createNode(int value)
-//{
-//	Dnode* temp = new Dnode;
-//	if (temp != nullptr)
-//	{
-//		temp->next = nullptr;
-//		temp->prev = nullptr;
-//		temp->v = value;
-//		return temp;
-//	}
-//	else
-//	{
-//		cout << "Could not assign memory for the node || Memory full" << endl;
-//	}
-//}
-
-// // This mehtod is to insert node in singly linked list
-//void DoublyLinkedList::insertNode(Dnode* node_addr)
-//{
-//	if (head == nullptr)
-//	{
-//		head = node_addr;
-//		tail = node_addr;
-//		return;
-//	}
-//
-//	Dnode* temp = head;
-//	while (temp->next != nullptr)
-//	{
-//		temp = temp->next;
-//	}
-//	temp->next = node_addr;
-//	if (head->next != nullptr)
-//	{
-//		node_addr->prev = temp;
-//		tail = node_addr;
-//	}
-//}
-
 DLLNode* DoublyLinkedList::createNode(int value)
 {
 	DLLNode* temp = new DLLNode;
@@ -73,40 +32,46 @@ void DoublyLinkedList::insertNode(DLLNode* newNode)
 	}
 }
 
+// apend node in list
 void DoublyLinkedList::append(int value)
 {
 	insertNode(createNode(value));
 }
 
+// pop a node from list
 void DoublyLinkedList::pop(int value)
 {
-	if (head == nullptr)
+	if (this->head == nullptr)
 	{
 		cout << "List is empty !!!" << endl;
 		return;
 	}
 	else
 	{
-		DLLNode* temp = head;
+		DLLNode* temp = this->head;
+		if (temp->v == value) {
+			this->head = this->head->next;
+			return;
+		}
 		while (temp->v != value)
 		{
 			temp = temp->next;
 		}
-		temp = temp->next->next;
+		temp->prev->next = temp->next;
 	}
 }
 
 //This method prints the list
-void DoublyLinkedList::printList()
+void DoublyLinkedList::print()
 {
 
-	if (head == nullptr)
+	if (this->head == nullptr)
 	{
 		cout << "List is empty" << endl;
 		return;
 	}
 
-	DLLNode* temp = head;
+	DLLNode* temp = this->head;
 
 	while (temp != nullptr)
 	{
@@ -118,7 +83,7 @@ void DoublyLinkedList::printList()
 }
 
 
-//This method is to print list from the end
+//This method reverse prints a list
 void DoublyLinkedList::reversePrint()
 {
 	if (tail == nullptr)
